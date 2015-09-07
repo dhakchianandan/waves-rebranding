@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/player">
+
+        <ImageView
+            android:id="@+id/app_icon"
+            android:layout_width="50dp"
+            android:padding="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_height="fill_parent"
+            android:src="@drawable/ic_icon"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/app_icon"
+            android:layout_toLeftOf="@+id/player_controls">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="3dp"
+                android:id="@+id/player_status"
+                android:text="Play"/>
+
+            <TextView
+                android:layout_height="fill_parent"
+                android:paddingLeft="4dp"
+                android:paddingBottom="4dp"
+                android:layout_below="@+id/player_status"
+                android:id="@+id/playing_station"
+                android:text="Radio City"
+                android:layout_width="match_parent" />
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/player_controls"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:src="@drawable/ic_play_circle"
+            android:background="@drawable/button_style"
+            android:scaleType="centerCrop"
+            android:padding="3dp"
+            android:clickable="true"
+            android:onClick="toggleMediaPlayer"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/radios_view"
+        android:layout_above="@id/player" />
+
+</RelativeLayout>
